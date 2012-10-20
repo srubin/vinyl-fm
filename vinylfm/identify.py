@@ -23,7 +23,10 @@ def match_song(filename):
     """return artist and title of song in filename"""
     
     if FP_SERVICE == "acoustid":
-        results = acoustid.match(ACOUSTID_API_KEY, filename)
+        try:
+            results = acoustid.match(ACOUSTID_API_KEY, filename)
+        except:
+            return (None, None)
         try:
             score, recording_id, title, artist = results.next()
             return Song(artist=artist, title=title)

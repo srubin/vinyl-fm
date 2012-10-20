@@ -21,7 +21,7 @@ def main():
     print "Listening... (control-C to exit)"
     
     while True:
-        audio_reader.record(60, 'tmpVFM.wav')
+        audio_reader.record(30, 'tmpVFM.wav')
         current_song = identify.match_song('tmpVFM.wav')
         if current_song == (None, None):
             print "..."
