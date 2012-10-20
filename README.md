@@ -1,9 +1,8 @@
-vinyl-fm
-========
+# vinyl-fm
 
 scrobble vinyl to last.fm
 
-To run:
+## Usage
 
 `python vinylfm.py`
 
@@ -13,7 +12,8 @@ At the moment, you must be using a record player that has USB output connected t
 
 A future update will save the password hash for automated login. Ideally, this would use over-the-air recognition (a la Sound Hound and Shazam) but I can't yet find a music fingerprinting library that can robustly identify music this way. If you find anything that would work in the over-the-air setting, please let me know!
 
-Requirements: portaudio, pyaudio, Cython, pyechonest, pylast
+## Requirements
+portaudio, pyaudio, Cython, pyechonest, pylast
 
 So, first:
 
@@ -22,5 +22,7 @@ http://portaudio.com/download.html (I built this from source; I think there was 
 and then:
 
 `pip install pyaudio Cython pyechonest pylast`
+
+## Obligatory work-in-progress note
 
 This is a work in progress. Chill. It'll get better.
