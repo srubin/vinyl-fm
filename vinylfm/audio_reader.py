@@ -1,9 +1,5 @@
 import pyaudio
 import wave
-import sys
-import threading
-
-import numpy as N
 
 chunk = 1024
 FORMAT = pyaudio.paInt16

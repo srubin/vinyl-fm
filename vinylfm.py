@@ -17,10 +17,14 @@ def main():
     network = pylast.LastFMNetwork(api_key = LASTFM_API_KEY, api_secret = 
         LASTFM_SECRET_KEY, username = username, password_hash = password_hash)
     
+    
+    print "Listening... (control-C to exit)"
+    
     while True:
         audio_reader.record(60, 'tmpVFM.wav')
         current_song = identify.match_song('tmpVFM.wav')
         if current_song == (None, None):
+            print "..."
             continue
         if current_song != last_song:
             network.scrobble(current_song.artist, 
