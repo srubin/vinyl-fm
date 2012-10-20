@@ -6,7 +6,7 @@ scrobble vinyl to last.fm
 
 `python vinylfm.py`
 
-You will be asked to enter your username and password. The password is immediately hashed and authorized by last.fm (it's not being saved in plaintext anywhere-- don't worry!).
+You will be asked to enter your username and password. The password is immediately hashed and authorized by last.fm (it's not being saved in plaintext anywhere- don't worry!).
 
 At the moment, you must be using a record player that has USB output connected to your computer, or a split output that you can plug in to your computer's microphone port. Make sure that you switch your sound input settings to use the record player (however it's attached).
 
