@@ -10,6 +10,9 @@ FP_SERVICE = "echonest"
 
 if FP_SERVICE == "echonest":
     import pyechonest.song as ensong
+    from config import ECHO_NEST_API_KEY
+    import pyechonest.config as enconfig
+    enconfig.ECHO_NEST_API_KEY = ECHO_NEST_API_KEY
 elif FP_SERVICE == "acoustid":
     from config import ACOUSTID_API_KEY 
     import acoustid
