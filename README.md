@@ -1,6 +1,6 @@
 # vinyl-fm
 
-scrobble vinyl to last.fm
+*automatically* scrobble vinyl to last.fm
 
 ## Usage
 
