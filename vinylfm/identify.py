@@ -19,7 +19,7 @@ elif FP_SERVICE == "acoustid":
 
 Song = namedtuple('Song', ['artist', 'title'])
 
-def match_song(filename):
+def match_song(duration, filename):
     """return artist and title of song in filename"""
     
     if FP_SERVICE == "acoustid":
@@ -33,9 +33,11 @@ def match_song(filename):
         except:
             return (None, None)
     elif FP_SERVICE == "echonest":
-        results = ensong.identify(filename)
         try:
+            results = ensong.identify(filename,
+                codegen_duration=duration, codegen_start=0)
             song = results[0]
             return Song(artist=song.artist_name, title=song.title)
         except:
             return (None, None)
+    return (None, None)

@@ -12,7 +12,10 @@ At the moment, you must be using a record player that has USB output connected t
 
 A future update will save the password hash for automated login. Ideally, `vinyl-fm` would use over-the-air recognition (a la Sound Hound and Shazam) but I can't yet find a music fingerprinting library that can robustly identify music this way. If you find anything that would work in the over-the-air setting, please let me know!
 
-Also coming soon: more intelligent recording segments. At the moment, vinyl-fm arbitrarily records 90 seconds segments. Instead, it should note long periods of silence and start recording after those pauses.
+## Todo
+* Interpolate album and songs given some successful matches
+* De-dupe matches with similar titles so the same song doesn't get scrobbled several times in a row.
+* More intelligent recording (looking for silence to find the beginning of a song?)
 
 ## Requirements
 portaudio, pyaudio, Cython, pyechonest, pylast
