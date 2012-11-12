@@ -18,6 +18,7 @@
       <div class="inner">
 
         <header>
+          <img src="images/logo.png"></img>
           <h1>Vinyl-fm</h1>
           <h2>scrobble vinyl to last.fm</h2>
         </header>
@@ -31,32 +32,40 @@
         <hr>
 
         <section id="main_content">
-          <h3>Welcome to GitHub Pages.</h3>
+          <h3>You want to scrobble all of your music. Even the vinyl.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>The goal of this project is to let you do that. While this has a ways to go before it's great, it already works in many cases.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<p>Here's what you need to run vinyl-fm:</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<ul>
+    <li>vinyl-fm. Download it above!</li>
+    <li>A record player with USB-out plugged into your computer (It might work with mini jack, but I haven't tested it. It probably won't work over-the-air with a microphone yet.)</li>
+    <li>A bunch of software requirements. First get <a href="http://portaudio.com/download.html">portaudio</a> (I built this from source; I think there was a problem with the homebrew version).</li>
+    <li>Then:<pre><code>pip install pyaudio Cython pyechonest pylast</code></pre></li>
+    <li>Finally, you need to get the <a href="http://static.echonest.com/ENMFP_codegen.zip">EchoNest Music Fingerprint codegen binary.</a> This is the library that we use to create create a fingerprint of the incoming audio clip. The EchoNest's servers then try to match this to one of the millions of songs in their database.</li>
+</ul>
 
-<h3>Designer Templates</h3>
+<h3>Ok, now let's scrobble some vinyl!</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<pre><code>python vinylfm.py</code></pre>
 
-<h3>Rather Drive Stick?</h3>
+<p>You will be asked to enter your username and password. The password is immediately hashed and authorized by last.fm (it's not being saved in plaintext anywhere- don't worry!).</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Make sure that you switch your sound input settings to use the record player (however it's attached).</p>
 
-<h3>Authors and Contributors</h3>
+<h3>I know, it's rough.</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Please leave feedback! File a bug report! Whatever! I have to know what doesn't work to know what to fix.</p>
 
-<h3>Support or Contact</h3>
+<p>Here's my current to-do list:</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+    <li>Interpolate album and songs given some successful matches</li>
+    <li>De-dupe matches with similar titles so the same song doesn't get scrobbled several times in a row.</li>
+    <li>More intelligent recording (looking for silence to find the beginning of a song?)</li>
+</ul>
+
         </section>
 
         <footer>

@@ -47,6 +47,13 @@ table {
 }
 
 /* LAYOUT STYLES */
+
+header img {
+    float: left;
+    width: 80px;
+    margin-right: 10px;
+}
+
 body {
   font-size: 1em;
   line-height: 1.5; 
